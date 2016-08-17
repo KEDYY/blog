@@ -1,40 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   
   <head>
-    <!--meta name="baidu-site-verification" content="HvuxptDcq6" /-->
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ page.title }} - {{ site.title }} - {{ site.author }}({{ site.email }})">
+    <meta name="theme-color" content="#238263">
+    <meta name="description" content="{{ page.title }} - {{ site.title }} - {{ site.author }}">
     <title>
       {{ page.title }} - {{ site.title }}
     </title>
     <!-- MUICSS -->
-	<link href="https://cdn.muicss.com/mui-0.7.0/css/mui.min.css" rel="stylesheet" type="text/css" />
-	<script src="https://cdn.muicss.com/mui-0.7.0/js/mui.min.js"></script>
-
+    <link href="https://cdn.muicss.com/mui-0.7.0/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.muicss.com/mui-0.7.0/js/mui.min.js"></script>
   </head>
   
   <body>
 
-    <!-- Navigation -->
-    <nav class="mui--no-user-select" role="navigation">
-      <div class="container">
+    <!--  -->
+    <nav class="mui-appbar" style="background-color:#238263">
+      <div class="mui-container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">
-              Toggle navigation
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-          </button>
-          <a class="mui-divider" href="/index.html">
+          <a href="/index.html">
             {{ site.title }}
           </a>
         </div>
@@ -43,44 +31,34 @@
           {% include navigation.html %} 
         </div>
         <!-- /.navbar-collapse -->
+        <!-- Blog Search Well -->  
+          {% include search.html %}
       </div>
       <!-- /.container -->
     </nav>
-    <!-- Page Content -->
-    <div class="mui-container">
-      <div class="row">
+    <!--  -->
+    <div class="mui-container-fluid">
+      <div class="mui-row">
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="mui-col-md-8">
           {{ content }}
         </div>
-
-	 <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
-	      <a href="javascript:;">
-		<div class="arrow"></div>
-		<div class="stick"></div>
-	      </a>
-	    </div>
+        <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
+          <a href="javascript:;">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+          </a>
+        </div>
 
         <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-          <!-- Blog Search Well -->  
-	
-            {% include search.html %}
+        <div class="mui-col-md-4">
           <!-- Blog Categories Well -->
-            {% include categories.html %}
-         
-            {% include hot.html %}
-       
-            {% include links.html %} 
-
+          {% include categories.html %}
+          {% include hot.html %}
+          {% include links.html %} 
           <!-- Side Widget Well -->
-           
         </div>
       </div>
-
-
-
-      <!-- /.row -->
       <hr>
       <!-- Footer -->
       <footer>
