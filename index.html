@@ -1,69 +1,51 @@
 ---
 layout: default
 ---
-<div id="index" class="row">
-	<div class="post-area">
-  	<div class="post-list-body">
-    	<div post-cate="All">
-        <ul>
-					{% for post in paginator.posts %}
-						<li class="mui-panel">
-							<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-							<span class="date">{{ post.date | date_to_string }}</span>
-							<hr>
-							<p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}</p>
-							<p> <a href="{{ post.url }}"><span >阅读全文 &raquo; </span></a></p>
-							<hr>
-						</li>
-					{% endfor %}
-				</ul>
-	<!-- Pager indicator -->
-	<ul class="pager">
-	  {% if paginator.previous_page %} {% if paginator.previous_page == 1 %}
-	  <li class="previous">
-	    <a href="{{ site.url }}/">
-	      &larr; Older
-	    </a>
-	  </li>
-	  {% else %}
-	  <li class="previous">
-	    <a href="{{ site.url }}/page{{ paginator.previous_page }}">
-	      &larr; Older
-	    </a>
-	  </li>
-	  {% endif %} {% endif %} {% if paginator.next_page %}
-	  <li class="next">
-	    <a href="{{ site.url }}/page{{ paginator.next_page }}">
-	      Newer &rarr;
-	    </a>
-	  </li>
-	  {% endif %}
+<div id="index">
+  {% if paginator.total_posts < 1 %}
+    <div class="mui--text-display3">啊偶，居然没有文章！！！</div>
+  {% endif %}
+  <ul>
+    {% for post in paginator.posts %}
+      <li class="mui-panel">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <span class="date">{{ post.date | date_to_string }}</span>
+        <hr>
+        <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}</p>
+        <p> <a href="{{ post.url }}"><span >阅读全文 &raquo; </span></a></p>
+        <hr>
+      </li>
+    {% endfor %}
+  </ul>
+	<!-- 分页 Pager indicator -->
+  <ul>
+	{% if paginator.page > 2 %} 
+    <li><a href="/page{{paginator.previous_page}}/">上一页</a></li> 
+  {% endif %} 
+  {% assign pageSize = 5 %} 
+  {% assign startPage = paginator.page | minus:pageSize %} 
+  {% if 2 > startPage %}	
+    {%	assign startPage = 2 %} 
+  {% endif %} 
+  {% assign endPage = paginator.page | plus:pageSize %} 
+  {% if endPage >= paginator.total_pages %}	
+    {%	assign endPage = paginator.total_pages | minus:1 %} 
+  {% endif %} 
+  {% for count in (startPage..endPage) %} 
+    {% if count == paginator.page %} 
+      <li><a href="#"><span class="current-page">{{count}}</span></a></li> 
+    {% else %} 
+      <li><a href="/page{{count}}/">{{count}}</a></li> 
+    {% endif %} 
+  {% endfor %} 
+  {% if paginator.next_page %} 
+    <li><a href="/page{{paginator.next_page}}/">下一页</a></li> 
+  {% endif %} 
+  <li><a href="/page{{paginator.total_pages}}/">末页</a></li> 
+  <li><a href="#">第{{paginator.page}}页 / 共{{paginator.total_pages}}页</a></li>
 	</ul>
-	</div>
-	
-
-	 
-       {% for category in site.categories %}
-	<div post-cate="{{category | first}}">
-
-          <ul class="posts">
-            {% for posts in category  %}
-              {% for post in posts %}
-                {% if post.url %}
-		<li>
-                  <a href="{{ post.url }}" class="post-list-item">
-                    <h2>{{ post.title }}</h2>
-                    <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                  </a>
-		</li>
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-          </ul>
-	</div>
-        {% endfor %}
-	
-	 </div>
-
 </div>
-</div>
+
+{% include categories.html %}
+{% include hot.html %}
+{% include links.html %}

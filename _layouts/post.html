@@ -2,63 +2,53 @@
 layout: default 
 --- 
 
-<!--  -->
+<!-- 加载博文 -->
 
- 
 <div class="mui-panel">
   <h1>{{ page.title }}</h1>
-  <div>
-    {{ page.date | date_to_string }}
-  </div>
+ 
   <!-- Author -->
-  {% if page.author %} • {{ page.author }}
-  {% else %}
-    <p> <a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
-  {% endif %}
-  
-  <p>授权方式 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0 许可协议</a>
-  </p>
+  <span>
+    {% if page.author %} • {{ page.author }}
+    {% else %}
+       <a href="mailto:{{ site.email }}">{{ site.author }}</a>
+    {% endif %}
+  </span>
+  <span>
+    {{ page.date | date_to_string }}
+  </span>
+  <span>许可协议<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0</a>
+  </span>
+  <p>
   <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}" target="_blank">纠错</a>&nbsp;&nbsp;
+  </p>
+  
   {% if page.meta %} • {{ page.meta }}{% endif %}
   <hr>
   <article>
     {{ content }}
   </article>
   <hr>
-</div>
-<div class="mui-panel">
+  <h3>更多内容<h3>
   <div class="mui-row">
-    {%if page.previous%}
-      <span class="mui-col-md-6">上篇：<a href="{{page.previous.url}}">{{page.previous.title}} </a>
-      </span>
-    {%endif%}
-    {%if page.next%}
-      <span class="mui-col-md-6">&nbsp;下篇：<a href="{{page.next.url}}">{{page.next.title}}</a>
-      </span>
-    {%endif%}
+    <span class="mui-col-md-6">上篇：
+      {%if page.previous%}
+      <a href="{{page.previous.url}}">{{page.previous.title}} </a>
+      {% else %}
+      <a href="/index.html">没有了，回首页</a>
+      {%endif%}
+    </span>
+    <span class="mui-col-md-6">&nbsp;下篇：
+      {%if page.next%}
+        <a href="{{page.next.url}}">{{page.next.title}}</a>
+      {% else %}
+        <a href="/index.html">没有了，回首页</a>
+      {%endif%}
+    </span>
   </div>
-		{% for category in site.categories %}
-			<div post-cate="{{category | first}}">
-				<ul class="mui-row">
-					{% for posts in category  %}
-						{% for post in posts %}
-							{% if post.url %}
-								<li class="mui-col-md-4">
-                  <a href="{{ post.url }}">
-                    <h2>{{ post.title }}</h2>
-                    <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                  </a>
-								</li>
-							{% endif %}
-						{% endfor %}
-					{% endfor %}
-				</ul>
-			</div>
-		{% endfor %}
-	 </div>
-	</div>
-</div>	
-  <!-- Blog Comments -->
-	<div class="media mui-panel">
-		{% include comment.html %}
-	</div>
+
+</div>
+<!-- 加载博客评论 -->
+<div class="mui-panel">
+  {% include comment.html %}
+</div>

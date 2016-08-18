@@ -1,8 +1,8 @@
-permalink: /blog/:year/:month/:title.html 
+# permalink: /blog/:year/:month/:title.html 
 include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
-encoding: utf-8
 markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlights: pygments
 url: blog.kedyy.com
 cdn_url: 7u2t01.com1.z0.glb.clouddn.com
@@ -12,19 +12,20 @@ timezone: Asia/Shanghai
 auto: false 
 
 paginate: 4
-paginate_path: "page:num"
+paginate_path: "/page:num"
 
 kramdown:
   auto_ids: true,
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: enable_coderay
+  use_coderay: false
 
 JB :
   IMAGE_PATH : http://blog.kedyy.com/images
 
 # presonal config
+theme_color: #00897B
 domain: http://blog.kedyy.com
 title: KEDYY
 description: 简单 高效
