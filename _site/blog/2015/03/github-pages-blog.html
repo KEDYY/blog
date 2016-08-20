@@ -4,8 +4,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#00897B">
     <meta name="description" content="利用github-pages建立个人博客 - KEDYY - Yifei0727">
     <title>
       利用github-pages建立个人博客 - KEDYY
@@ -14,8 +14,8 @@
     <script src="/js/jquery-1.11.0.js"></script>
     
     <!-- MUICSS -->
-    <link href="https://cdn.muicss.com/mui-0.7.0/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.muicss.com/mui-0.7.0/js/mui.min.js"></script>
+    <link href="/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="/js/mui.min.js"></script>
     <!-- 博客样式 -->
     <link href="/css/blog.css" rel="stylesheet" type="text/css" />
     <script src="/js/blog.js"></script>
@@ -25,7 +25,7 @@
   
   <body>
 
-  <!-- 导航区域 -->
+    <!-- 导航区域 -->
     <div class="sidebar">
       <nav >
         <div>
@@ -56,19 +56,18 @@
     </div>
 
     <!-- 顶栏 提示信息-->
-    <header>
-      <div class="mui-appbar" style="background-color:#00897B">
-        <!-- 搜索框，回车后执行搜索 -->  
-        <!-- 搜索框 -->
-<div class="mui-row">
-  <div class="mui-col-md-4"></div>
+    <div id="header" class="mui-container-fluid">
+      <header class="mui-row">
+  <div class="mui-appbar mui-col-md-12" style="background-color:#00897B">
+  <!-- 搜索框，回车后执行搜索 -->  
+  <div class="mui-row">
   <!-- 使用该代码即表示您同意接受 Google 自定义搜索服务条款。 -->
   <!-- 有关服务条款，请访问 http://www.google.com/cse/docs/tos.html?hl=zh-CN -->
-  <form name="cse"  id="searchbox" class="mui-form--inline mui-col-md-4" action="/search.html">
+  <form name="cse" class="mui-form--inline search-box mui-col-md-4 mui-col-md-offset-4" action="/search.html">
     <input type="hidden" name="cref" value="" />
     <input type="hidden" name="ie" value="utf-8" />
     <input type="hidden" name="hl" value="zh-CN" />
-    <input type="text" name="q" size="30" class="mui-textfield search" placeholder="搜索" />
+    <input type="text" name="q" size="30" class="mui-textfield search-img search-text" placeholder="搜索" />
   </form>
   <script type="text/javascript" src="http://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang=zh-CN"></script>			              
 </div>
@@ -80,18 +79,15 @@
 
 
 
-      </div>
-    </header>
-    
+  </div>
+</header>
+    </div>
+
     <!-- 主体内容区域 -->
-    <!-- PC PAD等宽屏 mui-container
-         手机 mui-container-fluid
-    -->
     <div id="container" class="mui-container">
       <div class="mui-row">
         <!-- 正栏 博文 -->
-
-        <!--div class="mui-col-md-8"-->
+        <!--div -->
         <div id="container-content"> 
           <!-- 加载博文 -->
 
@@ -107,11 +103,8 @@
   <span>
     01 Mar 2015
   </span>
-  <span>许可协议<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0</a>
-  </span>
-  <p>
-  <a href="https://github.com/KEDYY/KEDYY.github.io/edit/master/_posts/2015-03-01-github-pages-blog.md" target="_blank">纠错</a>&nbsp;&nbsp;
-  </p>
+  
+
   
   
   <hr>
@@ -1052,12 +1045,19 @@ git push -u origin master
 
 
   </article>
+  <div class="mui-row">
+    <div class="mui-col-md-4 mui-col-md-offset-4">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank" >CC BY-NC-SA 3.0</a>
+    </div>
+    <div class="mui-col-md-4">
+      <a href="https://github.com/KEDYY/KEDYY.github.io/edit/master/_posts/2015-03-01-github-pages-blog.md" target="_blank" >纠错</a>
+    </div>
+  </div>
   <hr>
-  <h3>更多内容<h3>
   <div class="mui-row">
     <span class="mui-col-md-6">上篇：
       
-      <a href="/web/2014/10/11/how-http-works.html">当我们打开网页时发生了什么 </a>
+      <a href="/blog/2014/10/how-http-works.html">当我们打开网页时发生了什么 </a>
       
     </span>
     <span class="mui-col-md-6">&nbsp;下篇：
@@ -1066,14 +1066,13 @@ git push -u origin master
       
     </span>
   </div>
-
 </div>
 <!-- 加载博客评论 -->
 <div class="mui-panel">
   <!-- 多说评论框 start -->
   <div class="post-comment">
-		<span>Comments</span>
-	<div class="ds-thread" data-thread-key="/other/programming/2015/03/01/github-pages-blog" data-title="利用github-pages建立个人博客" data-url="Kedyy.Github.io/other/programming/2015/03/01/github-pages-blog.html">
+		<span class="mui--text-title">评论</span>
+	<div class="ds-thread" data-thread-key="/blog/2015/03/github-pages-blog" data-title="利用github-pages建立个人博客" data-url="Kedyy.Github.io/blog/2015/03/github-pages-blog.html">
 	</div>
  </div>
 <!-- 多说评论框 end -->
@@ -1094,30 +1093,130 @@ var duoshuoQuery = {short_name:"kedyy"};
 </div>
 
         </div>
+
+        <!-- 右侧栏 推广 -->
+        <div class="mui-col-md-2">
+          <div class="mui-row">
+  <table class="mui-table">
+    <thead>
+      <th class="mui--text-title">
+        分类
+      </th>
+    </thead>  
+    <tbody>
+      <tr>
+        <td class="mui-col-md-8"><a href="/index.html" cate="All">全部 <em> 2</em></a></td>
+        <td col=2></td>
+      </tr>
+      <tr>
+        
+        <td  class="mui-col-md-4"><a href="javascript:;" cate="web">web <em>1</em></a></td>
+        
+        <td  class="mui-col-md-4"><a href="javascript:;" cate="other">other <em>1</em></a></td>
+        
+        <td  class="mui-col-md-4"><a href="javascript:;" cate="programming">programming <em>1</em></a></td>
+        
+      </tr>
+    </tbody>
+</div>
+
+
+
+
+        </div>
+        </div>
+        <div class="mui-col-md-2">
+          <div class="mui-row">
+    <div class="mui-col-md-10">
+      <table class="mui-table">
+        <thead>
+        <th class="mui--text-title">
+          热门文章
+        </th>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="/blog/2015/03/github-pages-blog.html" class="categories-list-item">利用Github-pages建立个人博客</a></td>	
+        <tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+        </div>
         <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
           <a href="javascript:;">
             <div class="arrow"></div>
             <div class="stick"></div>
           </a>
         </div>
-        <!-- 侧栏 推广 -->
-
       </div>
-      <hr>
     </div>
+
     <!-- 低栏 版权、外部脚本等 -->
-    <footer>
-      <div class="mui-row">
-  <div class="mui-col-md-4 mui-col-md-offset-4">© KEDYY 2013 - 2016  
+    <div id="footer" class="mui-container-fluid">
+      <footer class="mui-row">
+    <div class="mui-appbar mui-col-md-12" style="background-color:#00897B">
+    <div class="mui-row">
+  <div class="mui-col-md-8 mui-col-md-offset-2">
+    <table class="mui-table">
+      <thead>
+        <th class="mui--text-title">
+           网站推荐
+        </th>
+        <th class="mui--text-title">
+           特色项目
+        </th>
+        <th class="mui--text-title">
+           关注我们
+        </th>
+        <th class="mui--text-title">
+           填充
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a href="https://github.com/" target="_blank">
+            GitHub 
+            </a>
+          </td>
+          <td>
+            <a href="https://github.com/kedyy/SheepScanner">
+            SheepScanner 
+            </a>
+          </td>
+          <td>
+            <a href="https://plus.google.com/id">
+            Google+
+            </a>          
+          </td>
+          <td>
+            <a href="https://plus.google.com/id">
+            测试
+            </a>          
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+    <div class="mui-row">
+  <div class="mui-col-md-2 mui-col-md-offset-5">© <a href="https://github.com/KEDYY">KEDYY</a> 2013 - 2016  
   </div>
 </div>
 
-      <!--div style="display:none;">
+    <!--div style="display:none;">
     <script src="http://s95.cnzz.com/z_stat.php?id=1254799848&web_id=1254799848" language="JavaScript"></script>
 </div-->
 
-    </footer>
-
+    </div>
+  </div>
+</footer>
+    </div>
   </body>
 
 </html>

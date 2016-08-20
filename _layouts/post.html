@@ -17,19 +17,23 @@ layout: default
   <span>
     {{ page.date | date_to_string }}
   </span>
-  <span>许可协议<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0</a>
-  </span>
-  <p>
-  <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}" target="_blank">纠错</a>&nbsp;&nbsp;
-  </p>
+  
+
   
   {% if page.meta %} • {{ page.meta }}{% endif %}
   <hr>
   <article>
     {{ content }}
   </article>
+  <div class="mui-row">
+    <div class="mui-col-md-4 mui-col-md-offset-4">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank" >CC BY-NC-SA 3.0</a>
+    </div>
+    <div class="mui-col-md-4">
+      <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}" target="_blank" >纠错</a>
+    </div>
+  </div>
   <hr>
-  <h3>更多内容<h3>
   <div class="mui-row">
     <span class="mui-col-md-6">上篇：
       {%if page.previous%}
@@ -46,7 +50,6 @@ layout: default
       {%endif%}
     </span>
   </div>
-
 </div>
 <!-- 加载博客评论 -->
 <div class="mui-panel">

@@ -1,4 +1,4 @@
-# permalink: /blog/:year/:month/:title.html 
+permalink: /blog/:year/:month/:title.html 
 include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
 markdown: kramdown
@@ -10,7 +10,9 @@ lsi: false
 safe: true
 timezone: Asia/Shanghai
 auto: false 
+theme_color: 00897B
 
+  
 paginate: 4
 paginate_path: "/page:num"
 
@@ -19,13 +21,12 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  use_coderay: enable_coderay
 
 JB :
   IMAGE_PATH : http://blog.kedyy.com/images
 
 # presonal config
-theme_color: #00897B
 domain: http://blog.kedyy.com
 title: KEDYY
 description: 简单 高效
@@ -37,3 +38,5 @@ config:
   js_dir:
   img_dir:
   css_dir:
+
+gems: [jekyll-paginate]  

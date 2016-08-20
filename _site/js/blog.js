@@ -12,19 +12,22 @@ function setContainer(){
 	if (isMobile())
 	{
 		container.setAttribute("class", "mui-container-fluid");
-		content.setAttribute("class", "mui-col-md8");
+		/* content.classList.remove("mui-col-md8"); */
 	}else{
 		container.setAttribute("class", "mui-container");
-		content.setAttribute("class", null);
+		/* content.setAttribute("class", "mui-col-md8"); */
 	}
 }
 
 
 function isMobile(){
-	var find=navigator.userAgent.toLowerCase().match("((mobile)|(android)|(iphone)|(wp))");
+	var find=navigator.userAgent.toLowerCase().match("((mobile)|(android)|(iphone)|(ipad)|(wp))");
 	if (find != null)
 	{
-		if (window.screen.availWidth> 1024)
+		/* 当设备来自移动终端，且分别率低于 480 时，采用填充 
+		if (document.body.offsetWidth * window.devicePixelRatio < 1300)
+		*/
+		if (document.body.offsetWidth < 480)
 		{
 			return true;
 		};

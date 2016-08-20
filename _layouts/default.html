@@ -4,8 +4,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="{% if page.theme_color %}{{ page.theme_color }}{% else %}{{ site.theme_color }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#{% if page.theme_color %}{{ page.theme_color }}{% else %}{{ site.theme_color }}{% endif %}">
     <meta name="description" content="{{ page.title }} - {{ site.title }} - {{ site.author }}">
     <title>
       {{ page.title }} - {{ site.title }}
@@ -14,8 +14,8 @@
     <script src="/js/jquery-1.11.0.js"></script>
     
     <!-- MUICSS -->
-    <link href="https://cdn.muicss.com/mui-0.7.0/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.muicss.com/mui-0.7.0/js/mui.min.js"></script>
+    <link href="/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="/js/mui.min.js"></script>
     <!-- 博客样式 -->
     <link href="/css/blog.css" rel="stylesheet" type="text/css" />
     <script src="/js/blog.js"></script>
@@ -25,7 +25,7 @@
   
   <body>
 
-  <!-- 导航区域 -->
+    <!-- 导航区域 -->
     <div class="sidebar">
       <nav >
         <div>
@@ -42,24 +42,26 @@
     </div>
 
     <!-- 顶栏 提示信息-->
-    <header>
-      <div class="mui-appbar" style="background-color:#00897B">
-        <!-- 搜索框，回车后执行搜索 -->  
-        {% include search.html %}
-      </div>
-    </header>
-    
+    <div id="header" class="mui-container-fluid">
+      {% include header.html %}
+    </div>
+
     <!-- 主体内容区域 -->
-    <!-- PC PAD等宽屏 mui-container
-         手机 mui-container-fluid
-    -->
     <div id="container" class="mui-container">
       <div class="mui-row">
         <!-- 正栏 博文 -->
-
-        <!--div class="mui-col-md-8"-->
+        <!--div -->
         <div id="container-content"> 
           {{ content }}
+        </div>
+
+        <!-- 右侧栏 推广 -->
+        <div class="mui-col-md-2">
+          {% include categories.html %}
+        </div>
+        </div>
+        <div class="mui-col-md-2">
+          {% include hot.html %}
         </div>
         <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
           <a href="javascript:;">
@@ -67,17 +69,13 @@
             <div class="stick"></div>
           </a>
         </div>
-        <!-- 侧栏 推广 -->
-
       </div>
-      <hr>
     </div>
-    <!-- 低栏 版权、外部脚本等 -->
-    <footer>
-      {% include copyright.html %}
-      {% include analytics.html %}
-    </footer>
 
+    <!-- 低栏 版权、外部脚本等 -->
+    <div id="footer" class="mui-container-fluid">
+      {% include footer.html %}
+    </div>
   </body>
 
 </html>
