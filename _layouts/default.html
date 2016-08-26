@@ -12,6 +12,7 @@
     </title>
 
     <script src="/js/jquery-1.11.0.js"></script>
+    <script src="/js/jquery.mobile-events.min.js"></script>
     
     <!-- MUICSS -->
     <link href="/css/mui.min.css" rel="stylesheet" type="text/css" />
@@ -27,14 +28,13 @@
 
     <!-- 导航区域 -->
     <div class="sidebar">
-      <nav >
-        <div>
-          <h2 class="mui--appbar-line-height"><a href="/index.html">{{ site.title }}</a></h2>
+      <nav>
+
+        <div class="mui--appbar-line-height">
+         <a href="/index.html">{{ site.title }}</a>
         </div>
         <div class="mui-divider"></div>
-        <div class="icon-menu">
-          
-        </div>
+        
         <i class="icon-keyboard-arrow-right mui-hidden-xs"></i>
         <!-- Collect the nav links, forms, and other content for toggling -->
         {% include navigation.html %} 
@@ -43,15 +43,17 @@
 
     <!-- 顶栏 提示信息-->
     <div id="header" class="mui-container-fluid">
+      <header class="mui-appbar mui-row" style="background-color:#{{ site.theme_color }}">
       {% include header.html %}
+      </header>
     </div>
 
     <!-- 主体内容区域 -->
-    <div id="container" class="mui-container">
+    <div id="container" class="mui-container-fluid">
       <div class="mui-row">
         <!-- 正栏 博文 -->
         <!--div -->
-        <div id="container-content"> 
+        <div id="container-content" class="mui-col-md-6 mui-col-md-offset-2"> 
           {{ content }}
         </div>
 
@@ -63,12 +65,15 @@
         <div class="mui-col-md-2">
           {% include hot.html %}
         </div>
+        <img style="float:top;height:128px;width:128px;" src="/img/qr-wechat.jpg" />
+
         <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
           <a href="javascript:;">
             <div class="arrow"></div>
             <div class="stick"></div>
           </a>
         </div>
+        
       </div>
     </div>
 

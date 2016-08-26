@@ -1,5 +1,6 @@
 ---
 layout: default
+title: 首页
 ---
 
   {% if paginator.total_posts < 1 %}
@@ -9,7 +10,7 @@ layout: default
     {% for post in paginator.posts %}
       <div class="mui-panel">
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <span class="date">{{ post.date | date_to_string }}</span>
+        <span class="date">{{ page.date |  date:  '%Y年%m月%d日'  }}</span>
         <hr>
         <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}</p>
         <p> <a href="{{ post.url }}"><span >阅读全文 &raquo; </span></a></p>

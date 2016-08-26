@@ -1,6 +1,18 @@
 /* 博客主题配置 */
 
 
+.float-header {
+	position:fixed; 
+	margin-top:0; 
+	width:100%; 
+	z-index:100;
+}
+
+.float-footer {
+	position: absolute; 
+	bottom:0; 
+	width:100%; 
+}
 /* 容器 */
 
 /* 博文 */
@@ -8,15 +20,25 @@
 /* 纵横列 */
 .sidebar {
     position: fixed;
-    top: 0;
-    z-index: 2;
+    z-index: 200;
 	bottom: 0;
 	width: 200px;
-	left: 0px;
+	left: -200px;
 	overflow: auto;
 	background-color: #FFF;
 	transition: transform .2s;
 	
+}
+.icon-menu {
+	font-size: 24px;
+	background: url('/fonts/ic_menu_white_24px.svg') no-repeat 10px 14px;
+}
+.icon-menu-transform {
+	transform:rotate(90deg);
+}
+.sidebar-show {
+	top: 0px;
+	left: 0px;
 }
 
 .search-box {
@@ -25,12 +47,16 @@
 }
 .search-img {
 	border: 0px;
-	background: url('/fonts/ic_search_white_24px.svg') no-repeat 0px 17px; 
+	background: url('/fonts/ic_search_white_18px.svg') no-repeat 0px 14px; 
 }
 
 .search-text {
-	font-size: 20px;
-	padding-left: 24px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	font-size: 18px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	opacity: 1;
+}
+.Copyright {
+	font-size: 18px;
 }

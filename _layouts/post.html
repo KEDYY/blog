@@ -6,49 +6,46 @@ layout: default
 
 <div class="mui-panel">
   <h1>{{ page.title }}</h1>
- 
   <!-- Author -->
-  <span>
-    {% if page.author %} • {{ page.author }}
-    {% else %}
-       <a href="mailto:{{ site.email }}">{{ site.author }}</a>
-    {% endif %}
-  </span>
-  <span>
-    {{ page.date | date_to_string }}
-  </span>
-  
+  <div>
+  本文由
+   <a href="https://github.com/{{ site.author }}" target="_blank">
+      {% if page.author %}  {{ page.author }}
+      {% else %} {{ site.author }} {% endif %}
+   </a>
+    于 {{ page.date |  date:  '%Y年%m月%d日'  }}
+    发表
+  </div>
 
-  
   {% if page.meta %} • {{ page.meta }}{% endif %}
   <hr>
   <article>
     {{ content }}
   </article>
   <div class="mui-row">
-    <div class="mui-col-md-4 mui-col-md-offset-4">
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank" >CC BY-NC-SA 3.0</a>
+    <div class="mui-col-xs-6">
+      可在<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank" >CC BY-NC-SA 3.0</a>协议下转载
     </div>
-    <div class="mui-col-md-4">
+    <div class="mui-col-xs-2 mui-col-xs-offset-4">
       <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}" target="_blank" >纠错</a>
     </div>
   </div>
   <hr>
   <div class="mui-row">
-    <span class="mui-col-md-6">上篇：
+    <div class="mui-col-md-6">上篇：
       {%if page.previous%}
       <a href="{{page.previous.url}}">{{page.previous.title}} </a>
       {% else %}
       <a href="/index.html">没有了，回首页</a>
       {%endif%}
-    </span>
-    <span class="mui-col-md-6">&nbsp;下篇：
+    </div>
+    <div class="mui-col-md-6">下篇：
       {%if page.next%}
         <a href="{{page.next.url}}">{{page.next.title}}</a>
       {% else %}
         <a href="/index.html">没有了，回首页</a>
       {%endif%}
-    </span>
+    </div>
   </div>
 </div>
 <!-- 加载博客评论 -->
