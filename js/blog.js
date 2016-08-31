@@ -74,14 +74,7 @@ function reduce_input_box(){
 
 
 function event(){
-	$("body").on("swipeleft", function(){
-		visible_sidebar(false);
-	}
-	);
-	$("body").on("swiperight", function(){
-		visible_sidebar(true);
-	}
-	);
+
 	$("#navbar").on("click", function(){
 		$("#navbar").addClass(".icon-menu-transform")
 		visible_sidebar(true);
