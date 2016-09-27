@@ -29,12 +29,6 @@
     <!-- 导航区域 -->
     <div class="sidebar">
       <nav>
-
-        <div class="mui--appbar-line-height">
-         <a href="/index.html">{{ site.title }}</a>
-        </div>
-        <div class="mui-divider"></div>
-        
         <i class="icon-keyboard-arrow-right mui-hidden-xs"></i>
         <!-- Collect the nav links, forms, and other content for toggling -->
         {% include navigation.html %} 
@@ -53,20 +47,17 @@
       <div class="mui-row">
         <!-- 正栏 博文 -->
         <!--div -->
-        <div id="container-content" class="mui-col-md-6 mui-col-md-offset-2"> 
+        <div id="container-content" class="mui-col-md-10"> 
           {{ content }}
         </div>
 
         <!-- 右侧栏 推广 -->
         <div class="mui-col-md-2">
           {% include categories.html %}
-        </div>
-        </div>
-        <div class="mui-col-md-2">
           {% include hot.html %}
+        
+          <img style="float:right;height:128px;width:128px;" src="/img/qr-wechat.jpg" />
         </div>
-        <img style="float:top;height:128px;width:128px;" src="/img/qr-wechat.jpg" />
-
         <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
           <a href="javascript:;">
             <div class="arrow"></div>

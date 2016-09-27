@@ -16,11 +16,11 @@ function setContainer(){
 	if (is_wide())
 	{
 		container.setAttribute("class", "mui-container");
-		content.setAttribute("class", "mui-col-md8");
+		//content.setAttribute("class", "");
 	}else{
 		container.setAttribute("class", "mui-container-fluid");
-		content.classList.remove("mui-col-md8");
-		
+		content.setAttribute("style", "padding-left:7px;padding-right:7px;");
+		//content.classList.remove("mui-col-md-8");
 	}
 }
 
@@ -32,16 +32,15 @@ function is_wide(){
 		/* 当设备来自移动终端，且分别率低于 480 时，采用填充 
 		if (document.body.offsetWidth * window.devicePixelRatio < 1300)
 		*/ 
-		if (document.body.offsetWidth < 400)
-		{
+		if ($(window).width() < 600)
+		{	
 			return false;
 		};
 	}else
 	{
-		/* 当设备来自PC，且分别率低于 800 时，采用填充 
-		if (document.body.offsetWidth * window.devicePixelRatio < 1300)
+		/* 当设备来自PC，且分别率低于 1024 时，采用填充 
 		*/
-		if (document.body.offsetWidth < 800)
+		if ($(window).width() < 1024)
 		{
 			return false;
 		};
@@ -102,18 +101,22 @@ $(window).resize(function(){
 var scroll_pos = 0;
 $(window).scroll(function() {
 	/* 向上滚动时悬浮框出现，向下滚动为了展示更多内容则悬浮框根据情况隐藏 */
-	
-	if ($(window).scrollTop()<scroll_pos){
-		//up
+	if(is_wide()){
 		$("#header").addClass("float-header");
+		$("#container")[0].setAttribute("style", "margin-top:" + $("#header")[0].clientHeight + "px");
+		return;
+	}
+	if (scroll_pos - $(window).scrollTop() > 0){
+		//内容向下即向上滚动
+		$("#header").addClass("float-header");
+		$("#container")[0].setAttribute("style", "margin-top:" + $("#header")[0].clientHeight + "px");
 	}else{
-		//down
+		//内容向上
 		$("#header").removeClass("float-header");
+		$("#container")[0].removeAttribute("style", "margin-top");
 	}
 	scroll_pos = $(window).scrollTop();
-    if ($(window).scrollTop() <= $("#header")[0].clientHeight) {
-         $("#header").removeClass("float-header");
-    }
+
     //prevTop = currTop; //IE下有BUG，所以用以下方式
     //setTimeout(function(){prevTop = currTop},0);
 });
@@ -127,7 +130,6 @@ function visible_sidebar(is_show){
 }
 function fix_footer(){
 	var container = document.getElementById("container");
-	var header = document.getElementById("header");
 	var footer = document.getElementById("footer");
 	if ((container.scrollHeight + header.scrollHeight + footer.scrollHeight)< document.body.clientWidth)
 	{
