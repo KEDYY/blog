@@ -18,7 +18,7 @@ function setContainer(){
 		container.setAttribute("class", "mui-container");
 		//content.setAttribute("class", "");
 	}else{
-		container.setAttribute("class", "mui-container-fluid");
+		container.setAttribute("class", "mui-container-fluid over");
 		content.setAttribute("style", "padding-left:7px;padding-right:7px;");
 		//content.classList.remove("mui-col-md-8");
 	}

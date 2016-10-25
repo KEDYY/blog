@@ -5,7 +5,7 @@ markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlights: pygments
 url: blog.kedyy.com
-cdn_url: 7u2t01.com1.z0.glb.clouddn.com
+cdn_url: 
 lsi: false
 safe: true
 timezone: Asia/Shanghai
@@ -21,10 +21,11 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: enable_coderay
+  enable_coderay: true
+  syntax_highlighter: coderay
 
 JB :
-  IMAGE_PATH : http://blog.kedyy.com/images
+  IMAGE_PATH : /images
 
 # presonal config
 domain: http://blog.kedyy.com
@@ -35,8 +36,8 @@ email: Yifei0727+github@gmail.com
 github: KEDYY
 
 config:
-  js_dir:
-  img_dir:
-  css_dir:
+  js_dir: /js
+  img_dir: /img
+  css_dir: /css
 
 gems: [jekyll-paginate]  

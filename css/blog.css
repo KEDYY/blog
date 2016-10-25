@@ -17,7 +17,7 @@
 
 /* 博文 */
 
-/* 纵横列 */
+/* 左侧栏 */
 .sidebar {
     position: fixed;
     z-index: 200;
@@ -25,9 +25,9 @@
 	bottom: 200px;
 	width: 100px;
 	left: -200px;
-	overflow: auto;
+	overflow-y: auto;
 	background-color: #FFF;
-	transition: transform .2s;
+	transition: transform .5s;
 	
 }
 .icon-menu {
@@ -47,10 +47,12 @@
 }
 .search-img {
 	border: 0px;
+	z-index: 200;
 	background: url('/fonts/ic_search_white_18px.svg') no-repeat 0px 14px; 
 }
 
 .search-text {
+	z-index: 200;
 	font-size: 18px;
 	padding-left: 20px;
 	padding-top: 10px;
@@ -59,4 +61,15 @@
 }
 .Copyright {
 	font-size: 18px;
+}
+
+a, code {
+    overflow-wrap: break-word;
+}
+
+ul, p {
+	overflow-x: auto;
+}
+.over  {
+	overflow-x: hidden;
 }

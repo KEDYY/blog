@@ -1,5 +1,5 @@
 # robots.txt generated at http://tool.chinaz.com/robots/ 
-User-Agent: Baiduspider
+User-Agent: *
 Disallow:
 
 User-agent: *
