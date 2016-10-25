@@ -1,11 +1,12 @@
 ### 博客地址
 
-Github托管的是以前Jekyll版本的源码，现在博客用Hexo重新搭建
+Github博客 基于Jekyll (Ruby)
 #### 预览
 
-* Jekyll版本：EZLippi.github.io
-* Hexo 版本： [www.ezlippi.com](http://www.ezlippi.com)
-* Hexo版本源码：[https://coding.net/u/ezlippi/p/ezlippi/git/tree/coding-pages/](https://coding.net/u/ezlippi/p/ezlippi/git/tree/coding-pages/)
+* Jekyll
+* [MUI-CSS](https://www.muicss.com)
+* [Material Design](https://design.google.com/)
+* [Material ICONS](https://design.google.com/icons/)
 
 ### 使用Jekyll版本作为博客模板，仅需如下几步：
 
@@ -18,30 +19,28 @@ Github托管的是以前Jekyll版本的源码，现在博客用Hexo重新搭建
 7. 最后，push到你自己的博客Repo~ 
 
  *^_^*如果愿意，Star本项目一个吧~ 
+#### 说明 _config.yaml 
+
+1.  url 站点
+2.  theme_color 主题色彩
+2.  paginate 每页文章数
+
+将 # presonal config下的 几个配置全部更换为自己的
+
+
 
 ### 本项目使用了
 
-1. CNZZ的网站统计服务，官网：http://cnzz.com 
-2. 多说的评论功能，官网:http://duoshuo.com/
+1. 多说的评论功能 [官网](http://duoshuo.com/)
 
 ### 联系方式
 
-联系方式： Email(ouyanglip@gmail.com) 
+联系方式： Email(yifei0727+github at gmail.com) 
 
 
 ### 使用本项目作模板的博客链接
 
-* http://www.94geek.com  
-* http://www.haidaoxiaofei.me  
-* http://www.malphi.net  
-* http://happyaround.com  
-* http://tencentlocation.github.io  
-* http://wtaps.github.io 
-* http://maoshu.cc
-* http://x-carto.com/
-* (你的位置)  
+  
 
-## 2016-02-25更新
-
-* 本博客由Jekyl迁移到Hexo,博客地址[ezlippi](www.ezlippi.com),源码托管在了国内的[Coding.net](https://coding.net/u/ezlippi/p/ezlippi/git/tree/coding-pages/)
-* 使用Hexo搭建个人博客具体教程参考[Jekyll迁移到Hexo建立个人博客](http://www.ezlippi.com/blog/2016/02/jekyll-to-hexo.html)
+## 2016-10-25更新
+感谢 [Github](https://github.com/LippiOuYang/LippiOuYang.github.io) [欧阳利平](http://www.ezlippi.com/) 提供源码
