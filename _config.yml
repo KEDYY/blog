@@ -41,3 +41,5 @@ config:
   css_dir: /css
 
 gems: [jekyll-paginate]  
+
+theme: jekyll-theme-minimal
