@@ -1,26 +1,40 @@
 permalink: /blog/:year/:month/:title.html 
+
+# Handling Reading
+safe: true
 include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
-markdown: kramdown
+keep_files: [".git", ".svn"]
+encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-highlights: pygments
-url: blog.kedyy.com
-cdn_url: 
+strict_front_matter: false
+
+# Conversion
+markdown: kramdown
+highlights: rouge
 lsi: false
-safe: true
+excerpt_separator: "\n\n"
+incremental: false
+
 timezone: Asia/Shanghai
 auto: false 
 theme_color: 00897B
 
-  
+# Outputting
+permalink: date
 paginate: 4
-paginate_path: "/page:num"
+paginate_path: /page:num
 
 kramdown:
   auto_ids: true,
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  show_warnings: false
   enable_coderay: true
   syntax_highlighter: coderay
 
@@ -28,7 +42,9 @@ JB :
   IMAGE_PATH : /images
 
 # presonal config
-domain: https://blog.kedyy.com
+domain: blog.kedyy.com
+url: https://blog.kedyy.com
+cdn_url: 
 title: KEDYY
 description: 简单 高效
 author: Yifei0727
