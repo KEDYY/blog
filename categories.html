@@ -9,7 +9,7 @@ title: "分类：Categories"
     <li class="collection-header"><h4>{{ cat[0] }}({{ cat[1].size }})</h4></li>
     {% for post in cat[1] %} 
       <li class="collection-item">
-        <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+        <span>{{ post.date |  date: '%Y%M%D' }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
 	{% endfor %} 
   {% endif %} 
