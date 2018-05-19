@@ -1,20 +1,23 @@
-<div class="mui-row">
-  <table class="mui-table">
+<div class="row">
+  <table>
     <thead>
-      <th class="mui--text-title">
-        分类
-      </th>
-    </thead>  
+    <tr>
+      分类
+    </tr>
+    </thead>
     <tbody>
-      <tr>
-        <td class="mui-col-md-8"><a href="{{'/index.html' | prepend: site.baseurl}}" cate="All">全部 <em> {{site.posts | size}}</em></a></td>
-        <td col=2></td>
-      </tr>
-      <tr>
-        {% for category in site.categories order:ascending %}
-        <td  class="mui-col-md-4"><a href="javascript:;" cate="{{ category | first }}">{{ category | first }} <em>{{ category | last | size }}</em></a></td>
-        {% endfor %}
-      </tr>
+    <tr>
+      <td class="col s8"><a href="{{'/index.html' | prepend: site.domain}}" cate="All">全部 <em> {{site.posts |
+                                                                                               size}}</em></a></td>
+    </tr>
+    <tr>
+      {% for category in site.categories order:ascending %}
+      <td class="col s4"><a href="javascript:;" cate="{{ category | first }}">{{ category | first }} <em>{{ category |
+                                                                                                         last | size
+                                                                                                         }}</em></a>
+      </td>
+      {% endfor %}
+    </tr>
     </tbody>
 </div>
 

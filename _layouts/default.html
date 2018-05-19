@@ -17,11 +17,19 @@
   <script src="/js/jquery.mobile-events.min.js"></script>
 
   <!-- MUICSS -->
-  <link href="/css/mui.min.css" rel="stylesheet" type="text/css"/>
-  <script src="/js/mui.min.js"></script>
+  <!--<link href="/css/mui.min.css" rel="stylesheet" type="text/css"/>-->
+  <!--<script src="/js/mui.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!-- 博客样式 -->
-  <link href="/css/blog.css" rel="stylesheet" type="text/css"/>
-  <script src="/js/blog.js"></script>
+  <!--<link href="/css/blog.css" rel="stylesheet" type="text/css"/>-->
+  <!--<script src="/js/blog.js"></script>-->
   <!-- 代码样式 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
@@ -31,51 +39,55 @@
 <body>
 
 <!-- 导航区域 -->
-<div class="sidebar">
-  <nav>
-    <i class="icon-keyboard-arrow-right mui-hidden-xs"></i>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    {% include navigation.html %}
-  </nav>
-</div>
+<nav>
+  {% include navigation.html %}
+</nav>
 
 <!-- 顶栏 提示信息-->
-<div id="header" class="mui-container-fluid">
-  <header class="mui-appbar mui-row" style="background-color:#{{ site.theme_color }}">
-    {% include header.html %}
-  </header>
-</div>
+<header style="background-color:#{{ site.theme_color }}">
+  {% include header.html %}
+</header>
 
 <!-- 主体内容区域 -->
-<div id="container" class="mui-container-fluid overlay">
-  <div class="mui-row">
+<div id="container" class="container">
+  <div class="row">
     <!-- 正栏 博文 -->
     <!--div -->
-    <div id="container-content" class="mui-col-md-10">
+    <div id="container-content" class="col s10">
       {{ content }}
     </div>
 
     <!-- 右侧栏 推广 -->
-    <div class="mui-col-md-2">
+    <div class="col s2">
       {% include categories.html %}
       {% include hot.html %}
 
-      <img style="float:right;height:128px;width:128px;" src="/img/qr-wechat.jpg"/>
+      <img style="float:right;height:128px;width:128px;" src="/images/qr-wechat.jpg"/>
     </div>
-    <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
-      <a href="javascript:;">
-        <div class="arrow"></div>
-        <div class="stick"></div>
+    <div class="fixed-action-btn">
+      <a class="btn-floating green">
+        <i class="material-icons">publish</i>
       </a>
     </div>
+    <script>
+    $(document).ready(function(){
+      $('.fixed-action-btn').floatingActionButton();
+    });
+
+
+
+
+    </script>
 
   </div>
 </div>
 
 <!-- 低栏 版权、外部脚本等 -->
-<div id="footer" class="mui-container-fluid">
+<footer class="page-footer">
   {% include footer.html %}
-</div>
+</footer>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
