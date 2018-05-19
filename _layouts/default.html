@@ -50,23 +50,21 @@
 <!-- 主体内容区域 -->
 <div id="container" class="container">
   <div class="row">
-    <!-- 正栏 博文 -->
     <!--div -->
-    <div id="container-content" class="col s10">
+    <div id="container-content" class="col s12 m10 l9">
       {{ content }}
     </div>
 
     <!-- 右侧栏 推广 -->
-    <div class="col s2">
+    <div class="col l2">
       {% include categories.html %}
       {% include hot.html %}
-
       <img style="float:right;height:128px;width:128px;" src="/images/qr-wechat.jpg"/>
-    </div>
-    <div class="fixed-action-btn">
-      <a class="btn-floating green">
-        <i class="material-icons">publish</i>
-      </a>
+      <div class="fixed-action-btn">
+        <a class="btn-floating green">
+          <i class="material-icons">publish</i>
+        </a>
+      </div>
     </div>
     <script>
     $(document).ready(function(){
@@ -81,8 +79,6 @@
 <footer class="page-footer" style="background-color:#{{ site.theme_color }}">
   {% include footer.html %}
 </footer>
-<!--JavaScript at end of body for optimized loading-->
-<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
