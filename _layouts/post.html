@@ -13,18 +13,18 @@ layout: default
     {{ content }}
   </article>
   <div class="row">
-    <div class="col l6">
-      <span>
+    <ul class="col s12 m6 l6">
+      <li>
         本文由<a href="https://github.com/{{ site.author }}" target="_blank">
         {% if page.author %} {{ page.author }}
         {% else %} {{ site.author }} {% endif %}
       </a>于 {{ page.date | date: '%Y年%m月%d日' }}发表
-      </span>
-      <span>
+      </li>
+      <li>
         可在<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"
              title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0</a>协议下转载
-      </span>
-    </div>
+      </li>
+    </ul>
     <div class="col l2 offset-l4">
       <a href="https://github.com/{{ site.github }}/blog/edit/master/{{ page.path }}"
          target="_blank">纠错</a>
@@ -32,14 +32,14 @@ layout: default
   </div>
   <hr>
   <div class="row">
-    <div class="col s6">上篇：
+    <div class="col s12 m6 l6">上篇：
                         {%if page.previous%}
       <a href="{{page.previous.url}}">{{page.previous.title}} </a>
                         {% else %}
       <a href="/index.html">没有了，回首页</a>
                         {%endif%}
     </div>
-    <div class="col s6">下篇：
+    <div class="col s12 m6 l6">下篇：
                         {%if page.next%}
       <a href="{{page.next.url}}">{{page.next.title}}</a>
                         {% else %}

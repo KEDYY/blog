@@ -39,13 +39,12 @@
 <body>
 <!-- 顶栏 提示信息-->
 <header style="background-color:#{{ site.theme_color }}">
+  <!-- 导航区域 -->
+  <nav>
+    {% include navigation.html %}
+  </nav>
   {% include header.html %}
 </header>
-
-<!-- 导航区域 -->
-<nav>
-  {% include navigation.html %}
-</nav>
 
 <!-- 主体内容区域 -->
 <div id="container" class="container">
@@ -56,22 +55,16 @@
     </div>
 
     <!-- 右侧栏 推广 -->
-    <div class="col l2">
+    <div class="col s0 m2 l3">
       {% include categories.html %}
       {% include hot.html %}
-      <img style="float:right;height:128px;width:128px;" src="/images/qr-wechat.jpg"/>
+      <img style="float:center;height:128px;width:128px;" src="/images/qr-wechat.jpg"/>
       <div class="fixed-action-btn">
         <a class="btn-floating green">
           <i class="material-icons">publish</i>
         </a>
       </div>
     </div>
-    <script>
-    $(document).ready(function(){
-      $('.fixed-action-btn').floatingActionButton();
-    });
-    </script>
-
   </div>
 </div>
 
@@ -79,6 +72,11 @@
 <footer class="page-footer" style="background-color:#{{ site.theme_color }}">
   {% include footer.html %}
 </footer>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.fixed-action-btn').floatingActionButton();
+    });
+</script>
 </body>
 
 </html>
