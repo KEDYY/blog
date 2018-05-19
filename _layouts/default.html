@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#{% if page.theme_color %}{{ page.theme_color }}{% else %}{{ site.theme_color }}{% endif %}">
-    <meta name="description" content="{{ page.title }} - {{ site.title }} - {{ site.author }}">
-    <title>
-      {{ page.title }} - {{ site.title }}
-    </title>
 
-    <script src="/js/jquery-1.11.0.js"></script>
-    <script src="/js/jquery.mobile-events.min.js"></script>
-    
-    <!-- MUICSS -->
-    <link href="/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <script src="/js/mui.min.js"></script>
-    <!-- 博客样式 -->
-    <link href="/css/blog.css" rel="stylesheet" type="text/css" />
-    <script src="/js/blog.js"></script>
-    <!-- Markdown 样式 -->
-    <link href="/css/pygments.css" rel="stylesheet" type="text/css" />
-  </head>
-  
-  <body>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="theme-color"
+        content="#{% if page.theme_color %}{{ page.theme_color }}{% else %}{{ site.theme_color }}{% endif %}">
+  <meta name="description" content="{{ page.title }} - {{ site.title }} - {{ site.author }}">
+  <title>
+    {{ page.title }} - {{ site.title }}
+  </title>
 
-    <!-- 导航区域 -->
-    <div class="sidebar">
-      <nav>
-        <i class="icon-keyboard-arrow-right mui-hidden-xs"></i>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        {% include navigation.html %} 
-      </nav>
+  <script src="/js/jquery-1.11.0.js"></script>
+  <script src="/js/jquery.mobile-events.min.js"></script>
+
+  <!-- MUICSS -->
+  <link href="/css/mui.min.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/mui.min.js"></script>
+  <!-- 博客样式 -->
+  <link href="/css/blog.css" rel="stylesheet" type="text/css"/>
+  <script src="/js/blog.js"></script>
+  <!-- 代码样式 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+</head>
+
+<body>
+
+<!-- 导航区域 -->
+<div class="sidebar">
+  <nav>
+    <i class="icon-keyboard-arrow-right mui-hidden-xs"></i>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    {% include navigation.html %}
+  </nav>
+</div>
+
+<!-- 顶栏 提示信息-->
+<div id="header" class="mui-container-fluid">
+  <header class="mui-appbar mui-row" style="background-color:#{{ site.theme_color }}">
+    {% include header.html %}
+  </header>
+</div>
+
+<!-- 主体内容区域 -->
+<div id="container" class="mui-container-fluid overlay">
+  <div class="mui-row">
+    <!-- 正栏 博文 -->
+    <!--div -->
+    <div id="container-content" class="mui-col-md-10">
+      {{ content }}
     </div>
 
-    <!-- 顶栏 提示信息-->
-    <div id="header" class="mui-container-fluid">
-      <header class="mui-appbar mui-row" style="background-color:#{{ site.theme_color }}">
-      {% include header.html %}
-      </header>
+    <!-- 右侧栏 推广 -->
+    <div class="mui-col-md-2">
+      {% include categories.html %}
+      {% include hot.html %}
+
+      <img style="float:right;height:128px;width:128px;" src="/img/qr-wechat.jpg"/>
+    </div>
+    <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
+      <a href="javascript:;">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
     </div>
 
-    <!-- 主体内容区域 -->
-    <div id="container" class="mui-container-fluid overlay">
-      <div class="mui-row">
-        <!-- 正栏 博文 -->
-        <!--div -->
-        <div id="container-content" class="mui-col-md-10"> 
-          {{ content }}
-        </div>
+  </div>
+</div>
 
-        <!-- 右侧栏 推广 -->
-        <div class="mui-col-md-2">
-          {% include categories.html %}
-          {% include hot.html %}
-        
-          <img style="float:right;height:128px;width:128px;" src="/img/qr-wechat.jpg" />
-        </div>
-        <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
-          <a href="javascript:;">
-            <div class="arrow"></div>
-            <div class="stick"></div>
-          </a>
-        </div>
-        
-      </div>
-    </div>
-
-    <!-- 低栏 版权、外部脚本等 -->
-    <div id="footer" class="mui-container-fluid">
-      {% include footer.html %}
-    </div>
-  </body>
+<!-- 低栏 版权、外部脚本等 -->
+<div id="footer" class="mui-container-fluid">
+  {% include footer.html %}
+</div>
+</body>
 
 </html>

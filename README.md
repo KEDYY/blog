@@ -31,11 +31,9 @@ Github博客 基于Jekyll (Ruby)
 
 ### 本项目使用了
 
-1. 多说的评论功能 [官网](http://duoshuo.com/)
 
 ### 联系方式
 
-联系方式： Email(yifei0727+github at gmail.com) 
 
 
 ### 使用本项目作模板的博客链接
