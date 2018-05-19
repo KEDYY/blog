@@ -37,16 +37,15 @@
 </head>
 
 <body>
+<!-- 顶栏 提示信息-->
+<header style="background-color:#{{ site.theme_color }}">
+  {% include header.html %}
+</header>
 
 <!-- 导航区域 -->
 <nav>
   {% include navigation.html %}
 </nav>
-
-<!-- 顶栏 提示信息-->
-<header style="background-color:#{{ site.theme_color }}">
-  {% include header.html %}
-</header>
 
 <!-- 主体内容区域 -->
 <div id="container" class="container">
@@ -73,17 +72,13 @@
     $(document).ready(function(){
       $('.fixed-action-btn').floatingActionButton();
     });
-
-
-
-
     </script>
 
   </div>
 </div>
 
 <!-- 低栏 版权、外部脚本等 -->
-<footer class="page-footer">
+<footer class="page-footer" style="background-color:#{{ site.theme_color }}">
   {% include footer.html %}
 </footer>
 <!--JavaScript at end of body for optimized loading-->

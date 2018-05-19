@@ -1,56 +1,62 @@
 ---
 layout: default
-title: 首页
+title: 欢迎
 ---
 
-  {% if paginator.total_posts < 1 %}
-    <div class="mui-panel">
-      <div class="mui--text-display3">啊偶，居然没有文章！！！</div>
-    </div>
-  {% endif %}
+{% if paginator.total_posts < 1 %}
+<h4 class="center-align">啊偶，居然没有文章！！！</h4>
+{% endif %}
 
-  {% for post in paginator.posts %}
-    <div class="mui-panel">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <span class="date">{{ page.date |  date:  '%Y年%m月%d日'  }}</span>
-      <hr>
-      <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}</p>
-      <p> <a href="{{ post.url }}"><span >阅读全文 &raquo; </span></a></p>
+{% for post in paginator.posts %}
+<div class="card">
+  <div class="card-content white-text">
+    <span class="card-title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </span>
+    <hr>
+    <span class="date">{{ page.date |  date:  '%Y年%m月%d日'  }}</span>
+    <p>{% if post.excerpt.size > 32 %}
+       {{ post.excerpt }}
+       {% else %}
+       {{ post.content | strip_html | strip_newlines | truncate: 160 }}
+       {% endif %}
+    </p>
+    <div class="card-action">
+      <a href="{{ post.url }}"><span>阅读全文 &raquo; </span></a>
     </div>
+  </div>
   {% endfor %}
 
   <!-- 分页 Pager indicator -->
-  <div class="mui-col-md-4 mui-col-md-offset-2">
-  <table class="mui-table">
-    <tbody>
-      <tr>
-        {% if paginator.page > 2 %} 
-          <td><a href="/page{{paginator.previous_page}}/">上一页</a></td> 
-        {% endif %} 
-        {% assign pageSize = 5 %} 
-        {% assign startPage = paginator.page | minus:pageSize %} 
-        {% if 2 > startPage %}	
-          {%	assign startPage = 2 %} 
-        {% endif %} 
-        {% assign endPage = paginator.page | plus:pageSize %} 
-        {% if endPage >= paginator.total_pages %}	
-          {%	assign endPage = paginator.total_pages | minus:1 %} 
-        {% endif %} 
-        {% for count in (startPage..endPage) %} 
-          {% if count == paginator.page %} 
-            <td><a href="#"><span class="current-page">{{count}}</span></a></td> 
-          {% else %} 
-            <td><a href="/page{{count}}/">{{count}}</a></td> 
-          {% endif %} 
-        {% endfor %} 
-        {% if paginator.next_page %} 
-          <td><a href="/page{{paginator.next_page}}/">下一页</a></td> 
-        {% endif %} 
-        {% if paginator.page < paginator.total_pages%}
-          <td><a href="/page{{paginator.total_pages}}/">末页</a></td> 
-        {% endif %}
-        <td><a href="#">第{{paginator.page}}页 / 共{{paginator.total_pages}}页</a></td>
-        </tr>
-    </tbody>
-  </table>
+  <ul class="pagination">
+    {% if paginator.page > 2 %}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {% endif %}
+    {% assign pageSize = 5 %}
+    {% assign startPage = paginator.page | minus:pageSize %}
+    {% if 2 > startPage %}
+    {% assign startPage = 2 %}
+    {% endif %}
+    {% assign endPage = paginator.page | plus:pageSize %}
+    {% if endPage >= paginator.total_pages %}
+    {% assign endPage = paginator.total_pages | minus:1 %}
+    {% endif %}
+    {% for count in (startPage..endPage) %}
+    {% if count == paginator.page %}
+    <li class="active"><a href="#">{{count}}</a></li>
+    {% else %}
+    <li class="waves-effect"><a href="/page{{count}}/">{{count}}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+    <li class="waves-effect"><a href="/page{{paginator.next_page}}/">
+      <i class="material-icons">chevron_right</i></a>
+    </li>
+    {% endif %}
+    {% if paginator.page < paginator.total_pages%}
+    <li class="waves-effect"><a href="/page{{paginator.total_pages}}/">
+      <i class="material-icons">chevron_end</i></a>
+    </li>
+    {% endif %}
+  </ul>
 </div>
