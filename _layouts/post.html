@@ -4,7 +4,7 @@ layout: default
 
 <!-- 加载博文 -->
 
-<div class="card">
+<div class="card-panel">
   <h1>{{ page.title }}</h1>
 
   {% if page.meta %} • {{ page.meta }}{% endif %}
@@ -49,6 +49,6 @@ layout: default
   </div>
 </div>
 <!-- 加载博客评论 -->
-<div class="card">
+<div class="card-panel">
   {% include comment.html %}
 </div>
