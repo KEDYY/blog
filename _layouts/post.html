@@ -1,6 +1,6 @@
---- 
-layout: default 
---- 
+---
+layout: default
+---
 
 <!-- 加载博文 -->
 
@@ -8,12 +8,12 @@ layout: default
   <h1>{{ page.title }}</h1>
   <!-- Author -->
   <div>
-  本文由
-   <a href="https://github.com/{{ site.author }}" target="_blank">
-      {% if page.author %}  {{ page.author }}
+    本文由
+    <a href="https://github.com/{{ site.author }}" target="_blank">
+      {% if page.author %} {{ page.author }}
       {% else %} {{ site.author }} {% endif %}
-   </a>
-    于 {{ page.date |  date:  '%Y年%m月%d日'  }}
+    </a>
+    于 {{ page.date | date: '%Y年%m月%d日' }}
     发表
   </div>
 
@@ -24,27 +24,30 @@ layout: default
   </article>
   <div class="mui-row">
     <div class="mui-col-xs-6">
-      可在<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank" >CC BY-NC-SA 3.0</a>协议下转载
+      可在<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC
+                                                                                                                      BY-NC-SA
+                                                                                                                      3.0</a>协议下转载
     </div>
     <div class="mui-col-xs-2 mui-col-xs-offset-4">
-      <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}" target="_blank" >纠错</a>
+      <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}"
+         target="_blank">纠错</a>
     </div>
   </div>
   <hr>
   <div class="mui-row">
     <div class="mui-col-md-6">上篇：
-      {%if page.previous%}
+                              {%if page.previous%}
       <a href="{{page.previous.url}}">{{page.previous.title}} </a>
-      {% else %}
+                              {% else %}
       <a href="/index.html">没有了，回首页</a>
-      {%endif%}
+                              {%endif%}
     </div>
     <div class="mui-col-md-6">下篇：
-      {%if page.next%}
-        <a href="{{page.next.url}}">{{page.next.title}}</a>
-      {% else %}
-        <a href="/index.html">没有了，回首页</a>
-      {%endif%}
+                              {%if page.next%}
+      <a href="{{page.next.url}}">{{page.next.title}}</a>
+                              {% else %}
+      <a href="/index.html">没有了，回首页</a>
+                              {%endif%}
     </div>
   </div>
 </div>

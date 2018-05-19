@@ -17,8 +17,6 @@ excerpt_separator: "\n\n"
 incremental: false
 
 timezone: Asia/Shanghai
-auto: false 
-theme_color: 00897B
 
 # Outputting
 permalink: date
@@ -50,7 +48,8 @@ description: 简单 高效
 author: Yifei0727
 email: Yifei0727+github@gmail.com
 github: KEDYY
-
+auto: false
+theme_color: 00897B
 config:
   js_dir: /js
   img_dir: /img
@@ -58,4 +57,3 @@ config:
 
 gems: [jekyll-paginate]  
 
-theme: jekyll-theme-minimal
