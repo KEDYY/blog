@@ -1,4 +1,3 @@
-permalink: /blog/:year/:month/:title.html 
 
 # Handling Reading
 safe: true
@@ -19,7 +18,7 @@ incremental: false
 timezone: Asia/Shanghai
 
 # Outputting
-permalink: date
+permalink: /:year/:month/:day/:title.html
 paginate: 4
 paginate_path: /page:num
 
@@ -29,30 +28,28 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  input: GFM
   hard_wrap: false
   footnote_nr: 1
   show_warnings: false
   enable_coderay: true
   syntax_highlighter: coderay
 
-JB :
-  IMAGE_PATH : /images
+JB:
+  IMAGE_PATH: /images
 
-# presonal config
+# Default custom settings
 domain: blog.kedyy.com
-url: https://blog.kedyy.com
-cdn_url: 
+cdn_url:
 title: KEDYY
-description: 简单 高效
-author: Yifei0727
-email: Yifei0727+github@gmail.com
+description: 追求简单高效
+author: KEDYY.COM
+email: webmaster@KEDYY.COM
 github: KEDYY
-auto: false
 theme_color: 00897B
+
 config:
   js_dir: /js
-  img_dir: /img
+  img_dir: /images
   css_dir: /css
 
 gems: [jekyll-paginate]  

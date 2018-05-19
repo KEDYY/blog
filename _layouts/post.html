@@ -6,8 +6,13 @@ layout: default
 
 <div class="mui-panel">
   <h1>{{ page.title }}</h1>
-  <!-- Author -->
-  <div>
+
+  {% if page.meta %} • {{ page.meta }}{% endif %}
+  <hr>
+  <article>
+    {{ content }}
+  </article>
+  <div class="mui-row">
     本文由
     <a href="https://github.com/{{ site.author }}" target="_blank">
       {% if page.author %} {{ page.author }}
@@ -16,12 +21,6 @@ layout: default
     于 {{ page.date | date: '%Y年%m月%d日' }}
     发表
   </div>
-
-  {% if page.meta %} • {{ page.meta }}{% endif %}
-  <hr>
-  <article>
-    {{ content }}
-  </article>
   <div class="mui-row">
     <div class="mui-col-xs-6">
       可在<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC
@@ -29,7 +28,7 @@ layout: default
                                                                                                                       3.0</a>协议下转载
     </div>
     <div class="mui-col-xs-2 mui-col-xs-offset-4">
-      <a href="https://github.com/{{ site.github }}/{{ site.github }}.github.io/edit/master/{{ page.path }}"
+      <a href="https://github.com/{{ site.github }}/blog/edit/master/{{ page.path }}"
          target="_blank">纠错</a>
     </div>
   </div>
