@@ -14,7 +14,9 @@
    display:None;
    }
 }
-
+.icon_align {
+   vertical-align: text-top;
+}
 .search-box {
 	margin-top: 10px; 
 	margin-bottom: 10px;
