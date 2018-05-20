@@ -2,9 +2,9 @@
   <div>标签云</div>
   <hr>
   {% for tag in site.tags order:ascending %}
-  <a href="/tags.html#{{ tag | first }}" cate="{{ tag | first }}" class="chip">
+  <a href="/tags.html#{{ tag | first }}" class="chip">
     {{ tag | first }}
-    <span class="badge">{{ tag | last | size }}</span>
+    <em>{{ tag | last | size }}</em>
   </a>
   {% endfor %}
 </div>
