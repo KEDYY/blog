@@ -2,8 +2,9 @@
 layout: post
 title: RHEL6系列
 description: 红帽6Linux系列的网卡配置模板
-categories : [OS]
-tags: [Linux, CentOS, Network, System]
+date: 2018-05-15
+categories : [操作系统]
+tags: [Linux, CentOS, RedHat6, Network, System]
 ---
 
 *  目录

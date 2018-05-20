@@ -1,5 +1,5 @@
-<div class="row">
-  <div>全部标签 <em> {{site.posts | size}}</em></div>
+<div>
+  <div>标签云</div>
   <hr>
   {% for tag in site.tags order:ascending %}
   <a href="/tags.html#{{ tag | first }}" cate="{{ tag | first }}" class="chip">

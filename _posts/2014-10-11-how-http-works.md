@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  当我们打开网页时发生了什么
-categories : [web]
+categories : [技术原理]
 tags : [http,dns,web]
 ---
 
