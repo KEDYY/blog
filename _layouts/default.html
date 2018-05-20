@@ -13,27 +13,21 @@
     {{ page.title }} - {{ site.title }}
   </title>
 
-  <script src="/js/jquery-1.11.0.js"></script>
-  <script src="/js/jquery.mobile-events.min.js"></script>
-
-  <!-- MUICSS -->
-  <!--<link href="/css/mui.min.css" rel="stylesheet" type="text/css"/>-->
-  <!--<script src="/js/mui.min.js"></script>
-
-  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- 代码样式 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
 
   <!-- 博客样式 -->
   <link href="/css/blog.css" rel="stylesheet" type="text/css"/>
-  <!--<script src="/js/blog.js"></script>-->
-  <!-- 代码样式 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.0/jquery.mobile-events.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <!--<script src="/js/blog.js"></script>-->
+
 </head>
 
 <body>
@@ -58,7 +52,7 @@
     <div id="right-side-helper" class="col m12 l3">
       {% include categories.html %}
       {% include hot.html %}
-      <img style="float:center;height:128px;width:128px;" src="/images/qr-wechat.jpg"/>
+      <img style="float:center;height:64px;width:64px;" src="/images/qr-wechat.jpg"/>
       <div class="fixed-action-btn">
         <a class="btn-floating green">
           <i class="material-icons">publish</i>
@@ -75,6 +69,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
       $('.fixed-action-btn').floatingActionButton();
+      $('.sidenav').sidenav();
+      hljs.initHighlightingOnLoad();
     });
 </script>
 </body>
