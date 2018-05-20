@@ -1,0 +1,16 @@
+<div>
+  {% for tag in site.tags %}
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <a name="{{ tag[0] }}"></a>
+      <h3>{{ tag[0] }}({{ tag[1].size }})</h3>
+    </li>
+    {% for post in tag[1] %}
+    <li class="collection-item">
+      <span>{{ post.date | date: '%Y%M%D' }}</span> &raquo;
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
