@@ -1,12 +1,12 @@
 <div class="row">
-  <div>全部分类 <em> {{site.posts | size}}</em></div>
+  <div>全部标签 <em> {{site.posts | size}}</em></div>
   <hr>
-  {% for category in site.categories order:ascending %}
-  <a href="/categories.html#{{ category | first }}" cate="{{ category | first }}" class="chip">
-    {{ category | first }}
-    <span class="badge">{{ category | last | size }}</span></a>
+  {% for tag in site.tags order:ascending %}
+  <a href="/tags.html#{{ tag | first }}" cate="{{ tag | first }}" class="chip">
+    {{ tag | first }}
+    <span class="badge">{{ tag | last | size }}</span>
+  </a>
   {% endfor %}
-
 </div>
 
 
