@@ -18,7 +18,7 @@ incremental: false
 timezone: Asia/Shanghai
 
 # Outputting
-permalink: /article/:year/:month//:title.html
+permalink: /article/:year/:month/:title.html
 paginate: 4
 paginate_path: /page:num
 
@@ -52,5 +52,4 @@ config:
   img_dir: /images
   css_dir: /css
 
-gems: [jekyll-paginate]  
-
+gems: [jekyll-paginate]

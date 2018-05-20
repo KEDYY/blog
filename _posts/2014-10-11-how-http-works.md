@@ -1,20 +1,23 @@
 ---
 layout: post
 title:  当我们打开网页时发生了什么
-keywords: HTTP
 categories : [web]
 tags : [http,dns,web]
 ---
-简单地来说，当我们在浏览器上输入URL的敲下回车的时候。
 
- 
+*  目录
+{:toc}
+
+
+简单地来说，当我们在浏览器上输入URL的敲下回车的时候。
 
  1. 浏览器需要查找域名[domain]的IP，从不同的缓存直至DNS服 务器。
  2. 浏览器会给web服务器发送一个HTTP请求
  3. 服务器“处理”请求
  4. 服务器发回一个HTTP响应
  5. 浏览器渲染HTML到页面。
- 比如我们从[http://www.joes-hardware.com:80/power-tools.html](http://www.joes-hardware.com:80/power-tools.html)获取资源的时候，整个过程如下图所示：
+
+比如我们从[http://www.joes-hardware.com:80/power-tools.html](http://www.joes-hardware.com:80/power-tools.html)获取资源的时候，整个过程如下图所示：
  ![](/images/images/http/1.jpeg)
 	开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，我们用的比较多的是URI的一个子集叫统一资源定位符(URL,Uniform Resource Locator)。
 	

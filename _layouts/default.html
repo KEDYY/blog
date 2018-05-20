@@ -33,10 +33,6 @@
 <body>
 <!-- 顶栏 提示信息-->
 <header style="background-color:#{{ site.theme_color }}">
-  <!-- 导航区域 -->
-  <nav>
-    {% include navigation.html %}
-  </nav>
   {% include header.html %}
 </header>
 
@@ -50,6 +46,8 @@
 
     <!-- 右侧栏 显示更多信息推荐相关 -->
     <div id="right-side-helper" class="col m12 l3">
+      <div id="article-toc" class="hide-on-small-only toc-wrapper">
+      </div>
       {% include categories.html %}
       {% include hot.html %}
       <img style="float:center;height:64px;width:64px;" src="/images/qr-wechat.jpg"/>

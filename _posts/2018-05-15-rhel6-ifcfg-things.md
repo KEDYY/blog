@@ -1,11 +1,15 @@
 ---
 layout: post
 title: RHEL6系列
-keywords: blog
 description: 红帽6Linux系列的网卡配置模板
-categories : [Linux, CentOS, Network, System]
-tags: [NetworkConfig]
+categories : [OS]
+tags: [Linux, CentOS, Network, System]
 ---
+
+*  目录
+{:toc}
+
+
 ```properties
 NAME="System eth0"
 DEVICE=eth0
