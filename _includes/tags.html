@@ -1,16 +1,10 @@
 <div>
-  {% for tag in site.tags %}
-  <ul class="collection with-header">
-    <li class="collection-header">
-      <a name="{{ tag[0] }}"></a>
-      <h3>{{ tag[0] }}({{ tag[1].size }})</h3>
-    </li>
-    {% for post in tag[1] %}
-    <li class="collection-item">
-      <span>{{ post.date | date: '%Y%M%D' }}</span> &raquo;
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+  <div>标签云</div>
+  <hr>
+  {% for tag in site.tags order:ascending %}
+  <a href="/tags.html#{{ tag | first }}" cate="{{ tag | first }}" class="chip">
+    {{ tag | first }}
+    <span class="badge">{{ tag | last | size }}</span>
+  </a>
   {% endfor %}
 </div>
