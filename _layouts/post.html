@@ -20,7 +20,7 @@ layout: default
         {% else %}
         本文由<a href="https://github.com/{{ site.author }}" target="_blank">{{ site.author }}</a>
         {% endif %}
-      </a>于 {{ page.date | date: '%Y年%m月%d日' }}发表
+        于 {{ page.date | date: '%Y年%m月%d日' }}发表
       </li>
       <li>
         可在<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"
@@ -28,7 +28,7 @@ layout: default
       </li>
     </ul>
     <div class="col m2 offset-m5 l1 offset-l5">
-      <a href="https://github.com/{{ site.github }}/blog/edit/master/{{ page.path }}"
+      <a href="https://github.com/{{ site.author }}/blog/edit/master/{{ page.path }}"
          target="_blank">纠错</a>
     </div>
   </div>
