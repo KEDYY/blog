@@ -4,12 +4,13 @@
 $(document).ready(function(){
   $('article').find(":header").addClass("section scrollspy");
   $('#markdown-toc').addClass("pinned");
+  record_offset = $('#article-toc').offset().top
   $('#markdown-toc').prependTo("#article-toc");
   $('#markdown-toc').children().addClass("section table-of-contents");
   $('.scrollspy').scrollSpy();
   $(window).scroll(scrollToc);
 });
-var p = $('#article-toc').offset().top;
+var record_offset;
 function scrollToc(){
   if($(window).scrollTop() <= p){
     scope.css('top', '');
