@@ -15,6 +15,9 @@
    }
 }
 .icon_align {
+   vertical-align: bottom;
+}
+.chip_align {
    vertical-align: text-top;
 }
 .search-box {

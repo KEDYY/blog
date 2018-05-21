@@ -42,9 +42,8 @@ domain: blog.kedyy.com
 cdn_url:
 title: KEDYY
 description: 追求简单高效
-author: KEDYY.COM
+author: KEDYY
 email: webmaster@KEDYY.COM
-github: KEDYY
 theme_color: 00897B
 
 config:

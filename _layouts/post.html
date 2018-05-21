@@ -15,9 +15,11 @@ layout: default
   <div class="row">
     <ul class="col s12 m6 l6">
       <li>
-        本文由<a href="https://github.com/{{ site.author }}" target="_blank">
-        {% if page.author %} {{ page.author }}
-        {% else %} {{ site.author }} {% endif %}
+        {% if page.author %}
+        本文由<a href="https://github.com/{{ page.author }}" target="_blank">{{ page.author }}</a>
+        {% else %}
+        本文由<a href="https://github.com/{{ site.author }}" target="_blank">{{ site.author }}</a>
+        {% endif %}
       </a>于 {{ page.date | date: '%Y年%m月%d日' }}发表
       </li>
       <li>
@@ -25,7 +27,7 @@ layout: default
              title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0</a>协议下转载
       </li>
     </ul>
-    <div class="col l2 offset-l4">
+    <div class="col m2 offset-m5 l1 offset-l5">
       <a href="https://github.com/{{ site.github }}/blog/edit/master/{{ page.path }}"
          target="_blank">纠错</a>
     </div>
@@ -54,3 +56,13 @@ layout: default
 </div>
 
 <script type="text/javascript" src="/js/post-toc.js"></script>
+<script type="text/javascript" src="/js/github-widget.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+{% if page.author %}
+  getUserInfo("{{ page.author }}", widget);
+{% else %}
+  getUserInfo("{{ site.author }}", widget);
+{% endif %}
+});
+</script>
