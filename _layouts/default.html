@@ -43,9 +43,6 @@
     <div id="container-content" class="col s12 m12 l9">
       {{ content }}
     </div>
-    <!-- 推荐 -->
-    {% include hot.html %}
-    {% include tags.html %}
 
     <!-- 右侧栏 显示更多信息 -->
     <div id="right-side-helper" class="col m12 l3">
@@ -61,6 +58,10 @@
         </a>
       </div>
     </div>
+
+    <!-- 推荐 -->
+    {% include hot.html %}
+    {% include tags.html %}
   </div>
 </main>
 
