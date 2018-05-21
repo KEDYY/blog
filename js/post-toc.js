@@ -4,7 +4,7 @@
 $(document).ready(function(){
   $('article').find(":header").addClass("section scrollspy");
   $('#markdown-toc').addClass("pinned");
-  record_offset = $('#article-toc').offset().top
+  record_offset = $('#article-toc').offset().top;
   $('#markdown-toc').prependTo("#article-toc");
   $('#markdown-toc').children().addClass("section table-of-contents");
   $('.scrollspy').scrollSpy();
@@ -12,12 +12,12 @@ $(document).ready(function(){
 });
 var record_offset;
 function scrollToc(){
-  if($(window).scrollTop() <= p){
+  var scope = $("#article-toc").find($(".pinned"));
+  var active = scope.find(".active");
+  if($(window).scrollTop() <= record_offset){
     scope.css('top', '');
     return;
   }
-  var scope = $("#article-toc").find($(".pinned"));
-  var active = scope.find(".active");
   if(active.length ==0){
     return;
   }
