@@ -1,10 +1,12 @@
-<div>
-  <div>标签云</div>
-  <hr>
-  {% for tag in site.tags order:ascending %}
-  <a href="/tags.html#{{ tag | first }}" class="chip">
-    {{ tag | first }}
-    <em>{{ tag | last | size }}</em>
-  </a>
-  {% endfor %}
+<div class="row">
+  <div class="col  s12 m12 l9">
+    <div>标签云</div>
+    <hr>
+    {% for tag in site.tags order:ascending %}
+    <a href="/tags.html#{{ tag | first }}" class="chip">
+      {{ tag | first }}
+      <em>{{ tag | last | size }}</em>
+    </a>
+    {% endfor %}
+  </div>
 </div>
