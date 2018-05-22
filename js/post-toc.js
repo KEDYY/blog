@@ -6,6 +6,7 @@ $(document).ready(function(){
   $('#markdown-toc').addClass("pinned");
   record_offset = $('#article-toc').offset().top;
   $('#markdown-toc').prependTo("#article-toc");
+  $('#article-recommend').prependTo("#mobile-recommend");
   $('#markdown-toc').children().addClass("section table-of-contents");
   $('.scrollspy').scrollSpy();
   $(window).scroll(scrollToc);

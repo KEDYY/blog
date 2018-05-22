@@ -2,14 +2,6 @@
 
 
 @media only screen and (max-width: 600px){
-.container{
-   margin:0 auto 0 0;
-   max-width:600px;
-   width:100%
-   }
-.card-panel{
-   padding:12px;
-   }
 #right-side-helper{
    display:None;
    }
@@ -20,31 +12,8 @@
 .chip_align {
    vertical-align: text-top;
 }
-.search-box {
-	margin-top: 10px; 
-	margin-bottom: 10px;
-}
 
 
-.search-text {
-	z-index: 200;
-	font-size: 18px;
-	padding-left: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	opacity: 1;
-}
-.Copyright {
-	font-size: 18px;
-}
-
-a, code {
+code {
     overflow-wrap: break-word;
-}
-
-ul, p {
-	overflow-x: auto;
-}
-.over  {
-	overflow-x: hidden;
 }

@@ -40,15 +40,20 @@
 <main id="container" class="container">
   <div class="row">
     <!--div -->
-    <div id="container-content" class="col s12 m12 l9">
+    <div id="container-content" class="col s12 m8 l9">
       {{ content }}
     </div>
 
     <!-- 右侧栏 显示更多信息 -->
-    <div id="right-side-helper" class="col m12 l3">
+    <div id="right-side-helper" class="col m4 l3">
       <div id="article-user" class="hide-on-small-only toc-wrapper">
       </div>
       <div id="article-toc" class="hide-on-small-only toc-wrapper">
+      </div>
+      <div id="article-recommend" class="">
+        <!-- 推荐 -->
+        {% include hot.html %}
+        {% include tags.html %}
       </div>
 
       <img style="float:center;height:64px;width:64px;" src="/images/qr-wechat.jpg"/>
@@ -59,9 +64,11 @@
       </div>
     </div>
 
-    <!-- 推荐 -->
-    {% include hot.html %}
-    {% include tags.html %}
+  </div>
+  <div class="row">
+    <div id="mobile-recommend" class="col s12 ">
+
+    </div>
   </div>
 </main>
 
@@ -75,6 +82,7 @@
       $('.sidenav').sidenav();
       hljs.initHighlightingOnLoad();
     });
+
 </script>
 </body>
 
