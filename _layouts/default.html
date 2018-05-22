@@ -54,12 +54,20 @@
         <!-- 推荐 -->
         {% include hot.html %}
         {% include tags.html %}
+        <div id="pinned_qrCode" class=".show-on-large">
+          <img style="float:center;height:64px;width:64px;" src="/images/qr-wechat.jpg"/>
+        </div>
       </div>
 
-      <img style="float:center;height:64px;width:64px;" src="/images/qr-wechat.jpg"/>
       <div class="fixed-action-btn">
-        <a class="btn-floating green">
-          <i class="material-icons">publish</i>
+        <a class="btn-floating red" href="javascript:void(0)" onclick="scrollingHead()">
+          <i class="material-icons">arrow_drop_up</i>
+        </a>
+        <a class="btn-floating yellow" href="javascript:void(0)" onclick="scrollingTail()">
+          <i class="material-icons">arrow_drop_down</i>
+        </a>
+        <a class="btn-floating">
+          <i class="material-icons">share</i>
         </a>
       </div>
     </div>
@@ -83,6 +91,14 @@
       hljs.initHighlightingOnLoad();
     });
 
+
+
+function scrollingHead(){
+  $("html,body").stop().animate({scrollTop: $(window).scrollTop()-window.screen.height}, "normal");
+}
+function scrollingTail(){
+  $("html,body").stop().animate({scrollTop: $(window).scrollTop()+window.screen.height}, "normal");
+}
 </script>
 </body>
 

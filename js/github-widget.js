@@ -12,6 +12,11 @@ function getUserInfo(user_name, callback){
         user.followers_url = "https://github.com/{login}?tab=followers".format(user);
         user.repos_url = "https://github.com/{login}?tab=repositories".format(user);
         user.starred_url = "https://github.com/{login}?tab=stars".format(user);
+        if(user.followers<1){
+          user.followers = "暂无";
+        }else if(user.followers>999){
+          user.followers = "999+";
+        }
         callback(user);
       }
     }
@@ -51,13 +56,13 @@ function widget(user){
   '      <div>'+
   '        <a target="_blank" href="{html_url}"><b>{name}</b></a>'+
   '      </div>'+
-  '      <div>'+
-  '        {created_at}加入'+
-  '      </div>'+
-  '    </div>'+
-  '  </div>'+
+//  '      <div>'+
+//  '        {created_at}加入'+
+//  '      </div>'+
   '  <div>'+
   '    <span class="black-text">{bio}</span>'+
+  '  </div>'+
+  '    </div>'+
   '  </div>'+
   '  <div class="row">'+
   '    <div class="col s6 m6 l6">'+
@@ -67,7 +72,7 @@ function widget(user){
   '    </div>'+
   '    <div class="col s6 m6 l6">'+
   '      <a target="_blank" href="{followers_url}">'+
-  '        <i class="material-icons icon_align">people</i>关注人数 {followers}'+
+  '        <i class="material-icons icon_align">people</i>人气 {followers}'+
   '      </a>'+
   '    </div>'+
   '  </div>'+
@@ -79,7 +84,7 @@ function widget(user){
   '    </div>'+
   '    <div class="col s6 m6 l6">'+
   '      <a target="_blank" href="{starred_url}">'+
-  '        <i class="material-icons icon_align">collections_bookmark</i>星标仓库'+
+  '        <i class="material-icons icon_align">star</i>星标仓库'+
   '      </a>'+
   '    </div>'+
   '  </div>'+

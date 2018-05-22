@@ -29,10 +29,10 @@ function scrollToc(){
   }
 
   if (cur < $(window).height()  * 0.3){
-     scope.css('top', $(window).height() *0.5 + scope.offset().top - active.offset().top);
+     scope.animate({'top': $(window).height() *0.5 + scope.offset().top - active.offset().top}, "fast");
   }
 
   if (cur > $(window).height()  * 0.7){
-     scope.css('top', $(window).height() *0.5 + scope.offset().top - active.offset().top);
+     scope.animate({'top': $(window).height() *0.5 + scope.offset().top - active.offset().top}, "fast");
   }
 }
