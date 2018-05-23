@@ -2,7 +2,13 @@
   <a href="/" class="brand-logo">{{ site.title }}</a>
   <ul id="nav-desktop" class="right hide-on-med-and-down">
     <li>
-      <a href="/categories.html">分 类</a>
+      <a class='dropdown-trigger' data-target='dropdown-categories' href="javascript:void(0)">分 类</a>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown-categories' class='dropdown-content'>
+        {% for cat in site.categories %}
+        <li><a href="/categories.html#{{ cat[0] }}">{{ cat[0] }}</a></li>
+        {% endfor %}
+      </ul>
     </li>
     <li>
       <a href="/tags.html">标 签</a>

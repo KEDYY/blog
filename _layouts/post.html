@@ -6,9 +6,14 @@ layout: default
 
 <div class="">
   <h1>{{ page.title }}</h1>
+  <hr>
 
   {% if page.meta %} • {{ page.meta }}{% endif %}
-  <hr>
+  {% for tag in page.tags %}
+  <a href="/tags.html#{{ tag }}" class="chip">
+  {{ tag }}
+  </a>
+  {% endfor %}
   <article>
     {{ content }}
   </article>
@@ -27,10 +32,10 @@ layout: default
              title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0</a>协议下转载
       </li>
     </ul>
-    <div class="col m2 l1 offset-l2" style="margin-top: inherit;">
-      <a class="btn-floating red"  target="_blank"
+    <div class="col m2 l1 offset-l2 s3 offset-s9" style="margin-top: inherit;">
+      <a class="btn-floating red"  target="_blank" title="纠错"
          href="https://github.com/{{ site.author }}/blog/edit/master/{{ page.path }}">
-        <i class="material-icons">edit</i>纠错
+        <i class="material-icons">edit</i>
       </a>
     </div>
   </blockquote>

@@ -14,6 +14,6 @@
 }
 
 
-code {
+a, p, code {
     overflow-wrap: break-word;
 }

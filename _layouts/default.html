@@ -52,8 +52,8 @@
       </div>
       <div id="article-recommend" class="">
         <!-- 推荐 -->
-        {% include hot.html %}
         {% include tags.html %}
+        {% include hot.html %}
         <div id="pinned_qrCode" class=".show-on-large">
           <img style="float:center;height:64px;width:64px;" src="/images/qr-wechat.jpg"/>
         </div>
@@ -88,6 +88,7 @@
     $(document).ready(function(){
       $('.fixed-action-btn').floatingActionButton();
       $('.sidenav').sidenav();
+      $('.dropdown-trigger').dropdown({hover:true});
       hljs.initHighlightingOnLoad();
     });
 
@@ -99,6 +100,7 @@ function scrollingHead(){
 function scrollingTail(){
   $("html,body").stop().animate({scrollTop: $(window).scrollTop()+window.screen.height}, "normal");
 }
+
 </script>
 </body>
 

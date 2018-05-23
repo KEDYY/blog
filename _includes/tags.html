@@ -1,12 +1,43 @@
 <div class="row">
+
   <div class="col  s12 m12 l9">
     <div>标签云</div>
     <hr>
-    {% for tag in site.tags order:ascending %}
-    <a href="/tags.html#{{ tag | first }}" class="chip">
-      {{ tag | first }}
-      <em>{{ tag | last | size }}</em>
-    </a>
-    {% endfor %}
+
+    <div id="tag-cloud">
+    </div>
+
   </div>
 </div>
+<script src="/js/jquery.svg3dtagcloud.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  var entries = [
+    {% for tag in site.tags order:ascending %}
+      { label: '{{ tag | first }}', url: '/tags.html#{{ tag | first }}', target: '_top' },
+    {% endfor %}
+  ];
+  var settings = {
+    entries: entries,
+    width: 200,
+    height: 150,
+    radius: '65%',
+    radiusMin: 75,
+    bgDraw: true,
+    bgColor: '#{{ site.theme_color }}',
+    opacityOver: 1.00,
+    opacityOut: 0.05,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 2,
+    fontFamily: 'Oswald, Arial, sans-serif',
+    fontSize: '15',
+    fontColor: '#fff',
+    fontWeight: 'normal',//bold
+    fontStyle: 'normal',//italic
+    fontStretch: 'expanded',//normal, wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+    fontToUpperCase: true
+  };
+  $('#tag-cloud').svg3DTagCloud(settings);
+});
+</script>
