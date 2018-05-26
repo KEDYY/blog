@@ -10,7 +10,6 @@ strict_front_matter: false
 
 # Conversion
 markdown: kramdown
-highlights: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
@@ -23,13 +22,16 @@ paginate: 4
 paginate_path: /page:num
 
 kramdown:
+  input: GFM
   auto_ids: true,
+  autolink: true
   footnote_nr: 1
   entity_output: as_char
-  toc_levels: 1..6
+  toc_levels: 2..5
+  header_offset: 1
+  with_toc_data: true
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   hard_wrap: false
-  footnote_nr: 1
   show_warnings: false
   enable_coderay: true
   syntax_highlighter: coderay
